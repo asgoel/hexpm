@@ -7,10 +7,12 @@ defmodule Hexpm.Web.API.ReleaseController do
   plug :authorize, [domain: :api, fun: &maybe_package_owner?/2] when action in [:create]
 
   def create(conn, %{"body" => body}) do
+    # TODO: check permission
     handle_tarball(conn, conn.assigns.repository, conn.assigns.package, conn.assigns.user, body)
   end
 
   def show(conn, _params) do
+    # TODO: check permission
     release = Releases.preload(conn.assigns.release)
 
     when_stale(conn, release, fn conn ->
@@ -21,6 +23,7 @@ defmodule Hexpm.Web.API.ReleaseController do
   end
 
   def delete(conn, _params) do
+    # TODO: check permission
     package = conn.assigns.package
     release = conn.assigns.release
 
