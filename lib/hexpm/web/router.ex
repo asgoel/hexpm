@@ -49,6 +49,9 @@ defmodule Hexpm.Web.Router do
     get "/signup", SignupController, :show
     post "/signup", SignupController, :create
 
+    get "/resend_email", ResendEmailController, :show
+    post "/resend_email", ResendEmailController, :create
+
     get "/password/new", PasswordController, :show
     post "/password/new", PasswordController, :update
 

@@ -21,6 +21,7 @@
       <br><br>
 
       <p><a href="<%= signup_path(Endpoint, :show) %>">Don't have an account?</a></p>
+      <p><a href="<%= resend_email_path(Endpoint, :show) %>"> Resend verification email</a></p>
     <% end %>
   </div>
 </div>

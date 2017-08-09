@@ -222,6 +222,10 @@ defmodule Hexpm.Accounts.Users do
     end
   end
 
+  def resend_verify_email_logged_out(email) do
+    email = 
+  end
+
   def resend_verify_email(user, params) do
     email = find_email(user, params)
 
